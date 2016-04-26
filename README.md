@@ -1,6 +1,6 @@
 # Computer Systems Organization : Lab 4
 
-As student attempted to implement her own shell program. It works, but it has several bugs.  Your task for this lab is to fix the bugs and add some additional features. In addition, you may do some 'opportunistic refactoring', which simply means you can look for opportunity to improve code quality while you work. For example, you may try to reduce the usage of global variables.
+A student attempted to implement her own shell program. It works, but it has several bugs.  Your task for this lab is to fix the bugs and add some additional features. In addition, you may do some 'opportunistic refactoring', which simply means you can look for opportunity to improve code quality while you work. For example, you may try to reduce the usage of global variables.
 
 # List of Known Bugs
 
