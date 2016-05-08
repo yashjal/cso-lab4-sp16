@@ -1,11 +1,24 @@
 #include "lab4.h"
 
+int run;
+//SIGINT handler
+void INThandler(int sig) {
+    run = 1;
+}
+
 /* Shell input line */
 int process(void)
 {
+    //fix4
+    run = 0;
+    signal(SIGINT,INThandler);
+    if (run)
+        return 0;
+
     char *arg[MAXARG + 1];  /* pointer array for runcommand */
     int toktype;            /* type of token in command */
-    int narg ;              /* number of arguments so far */
+    //fix1
+    int narg=0;              /* number of arguments so far */
     int type;               /* type = FOREGROUND or BACKGROUND */
 
     while (1) 

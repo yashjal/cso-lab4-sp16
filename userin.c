@@ -12,14 +12,28 @@ int userinput( )
 
     // Display prompt
     printf("%s", PROMPT);
+    char k[4] = {'e','x','i','t'};
 
     int count = 0;
     while(1)
     {
         int c;
+        int i;
+        
         if((c = getchar()) == EOF)
             return(EOF);
 
+        //fix3
+        if (count == 4) {
+            for (i = 0; i < 4; i++) {
+                if (k[i] != inpbuf[i])
+                    break;
+
+                if (i == 3 && c == '\n')
+                    return(EOF);
+            }
+        }
+              
         if(count < MAXBUF)
             inpbuf[count++] = c;
 
