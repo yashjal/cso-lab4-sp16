@@ -12,7 +12,7 @@ int userinput( )
 
     // Display prompt
     printf("%s", PROMPT);
-    char k[4] = {'e','x','i','t'};
+    char k[] = {'e','x','i','t'};
 
     int count = 0;
     while(1)
