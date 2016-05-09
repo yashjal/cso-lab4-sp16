@@ -9,7 +9,7 @@ without resetting narg to 0. Easy fix was in line 19 when narg
 is declared, we just initialize it to 0 so that everytime 
 process() is called, narg is resetted to 0.
 
-Bug 2: 
+Bug 2:   
 
 Bug 3: To quit the program if exit is typed, we check in
 userin.c if in the 4th count, inpbuf (storing the shell

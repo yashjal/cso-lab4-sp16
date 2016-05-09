@@ -15,7 +15,7 @@ int process(void)
     if (run)
         return 0;
 
-    char *arg[MAXARG + 1];  /* pointer array for runcommand */
+    char *arg[MAXARG + 1];  /* pointer array for runcommand *///
     int toktype;            /* type of token in command */
     //fix1
     int narg=0;              /* number of arguments so far */
