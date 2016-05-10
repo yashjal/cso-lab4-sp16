@@ -49,9 +49,6 @@ int process(void)
                         if (arg[1] == '\0')
                             chdir(getenv("HOME"));
 
-                        else if(strcmp(arg[1], "..") == 0)
-                            chdir("..");
-
                         else 
                             chdir(arg[1]);
                     }
