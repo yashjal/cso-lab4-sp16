@@ -9,7 +9,13 @@ without resetting narg to 0. Easy fix was in line 19 when narg
 is declared, we just initialize it to 0 so that everytime 
 process() is called, narg is resetted to 0.
 
-Bug 2:   
+Bug 2: If "cd" is called, then we must use chdir() instead of
+execvp(). Since we're changing the directory, the shell 
+process itself needs to execute chdir(), so that its own 
+current directory is updated. So, in process.c, in lines 47-
+54, before using execvp, check if arg[0] is "cd" , if it is,
+then use chdir(). Only if arg is not "cd", do we call
+runcommand.
 
 Bug 3: To quit the program if exit is typed, we check in
 userin.c if in the 4th count, inpbuf (storing the shell

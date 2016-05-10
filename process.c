@@ -43,7 +43,19 @@ int process(void)
                 if(narg != 0)
                 {
                     arg[narg] = 0;
-                    runcommand(arg,type);
+
+                    //fix2
+                    if(strcmp(arg[0], "cd") == 0){
+                        chdir(getenv("HOME"));
+                    }
+
+                    else if(strcmp(arg[0], "cd..") == 0){
+                        chdir("..");
+                    }
+
+                    else {
+                        runcommand(arg,type);
+                    }
                 }
 
                 if(toktype == EOL)
