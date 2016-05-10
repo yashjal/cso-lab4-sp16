@@ -46,11 +46,14 @@ int process(void)
 
                     //fix2
                     if(strcmp(arg[0], "cd") == 0){
-                        chdir(getenv("HOME"));
-                    }
+                        if (arg[1] == '\0')
+                            chdir(getenv("HOME"));
 
-                    else if(strcmp(arg[0], "cd..") == 0){
-                        chdir("..");
+                        else if(strcmp(arg[1], "..") == 0)
+                            chdir("..");
+
+                        else 
+                            chdir(arg[1]);
                     }
 
                     else {
