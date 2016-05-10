@@ -13,7 +13,7 @@ Bug 2: If "cd" is called, then we must use chdir() instead of
 execvp(). Since we're changing the directory, the shell 
 process itself needs to execute chdir(), so that its own 
 current directory is updated. So, in process.c, in lines 47-
-57, before using execvp, check if arg[0] is "cd" , if it is,
+54, before using execvp, check if arg[0] is "cd" , if it is,
 then use chdir(). Only if arg is not "cd", do we call
 runcommand.
 
